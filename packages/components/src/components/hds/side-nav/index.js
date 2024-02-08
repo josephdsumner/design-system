@@ -8,6 +8,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { assert } from '@ember/debug';
 import { registerDestructor } from '@ember/destroyable';
+import { schedule } from '@ember/runloop';
 
 export default class HdsSideNavComponent extends Component {
   @tracked isResponsive = this.args.isResponsive ?? true; // controls if the component reacts to viewport changes
@@ -111,11 +112,26 @@ export default class HdsSideNavComponent extends Component {
   toggleMinimizedStatus() {
     this.isMinimized = !this.isMinimized;
 
+    this.containersToHide.forEach((element) => {
+      if (this.isMinimized) {
+        element.setAttribute('inert', '');
+      } else {
+        element.removeAttribute('inert');
+      }
+    });
+
     let { onToggleMinimizedStatus } = this.args;
 
     if (typeof onToggleMinimizedStatus === 'function') {
       onToggleMinimizedStatus(this.isMinimized);
     }
+  }
+
+  @action
+  didInsert(element) {
+    this.containersToHide = element.querySelectorAll(
+      '.hds-side-nav-hide-when-minimized'
+    );
   }
 
   @action
