@@ -8,7 +8,7 @@ When a Flyout is open, the rest of the page becomes inert. The page scrolling is
 
 ## Positioning
 
-As an overlaying component, the `Hds::Flyout` is rendered on the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer), meaning it is always placed on top of all other elements in the page.
+As an overlaying component, the `Hds::Dialog::Flyout` is rendered on the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer), meaning it is always placed on top of all other elements in the page.
 
 ## Focus trap
 
@@ -24,7 +24,7 @@ This component uses [`ember-focus-trap`](https://github.com/josemarluedke/ember-
 />
 
 {{#if this.basicFlyoutActive}}
-  <Hds::Flyout id="basic-flyout"
+  <Hds::Dialog::Flyout id="basic-flyout"
     @onClose={{fn this.deactivateFlyout "basicFlyoutActive"}} as |M|>
     <M.Header @tagline="Main page context" @icon="info">
       Additional information
@@ -40,7 +40,7 @@ This component uses [`ember-focus-trap`](https://github.com/josemarluedke/ember-
         Quisque vitae accumsan est, eu vehicula arcu.
       </p>
     </M.Body>
-  </Hds::Flyout>
+  </Hds::Dialog::Flyout>
 {{/if}}
 ```
 

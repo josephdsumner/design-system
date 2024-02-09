@@ -11,7 +11,7 @@ When considering internationalization (i18n), **start** and **end** are suitable
 
 ### Left alignment
 
-Actions are aligned to the left of the container or page. A common example of this alignment method is in [Modals](/components/modal) and page-level forms.
+Actions are aligned to the left of the container or page. A common example of this alignment method is in [Modals](/components/dialog/modal) and page-level forms.
 
 ![Left alignment example](/assets/patterns/button-organization/using-left-alignment.png)
 

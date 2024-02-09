@@ -9,18 +9,19 @@ import { setupApplicationTest } from 'website/tests/helpers';
 import { a11yAudit } from 'ember-a11y-testing/test-support';
 import { globalAxeOptions } from 'website/tests/a11y-helper';
 
-module('Acceptance | components/modal', function (hooks) {
+module('Acceptance | components/dialog/flyout', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('visiting /components/modal', async function (assert) {
-    await visit('/components/modal');
+  test('visiting /components/dialog/flyout', async function (assert) {
+    await visit('/components/dialog/flyout');
 
-    assert.strictEqual(currentURL(), '/components/modal');
+    assert.strictEqual(currentURL(), '/components/dialog/flyout');
   });
+  test('Components/dialog/flyout page passes automated a11y checks', async function (assert) {
+    await visit('/components/dialog/flyout');
 
-  test('components/modal passes a11y automated checks', async function (assert) {
-    await visit('/components/modal');
     await a11yAudit(globalAxeOptions);
+
     assert.ok(true, 'a11y automation audit passed');
   });
 });

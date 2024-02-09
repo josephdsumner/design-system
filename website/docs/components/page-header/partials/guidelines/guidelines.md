@@ -86,7 +86,7 @@ Don’t use full sentences in the subtitle, use a [description](#description) in
 
 Displays a description beneath the title and subtitle to communicate more detailed information about the page, link out to external documentation and resources, and capture more generic information about the page. Not all pages need a description, especially if the title is explicit enough.
 
-We recommend limiting the Page Header description to 1–2 sentences. If a longer description is required, consider linking to external documentation or moving more detailed content to an interstitial component like a [Flyout](/components/flyout).
+We recommend limiting the Page Header description to 1–2 sentences. If a longer description is required, consider linking to external documentation or moving more detailed content to an interstitial component like a [Flyout](/components/dialog/flyout).
 
 ![Page Header Description](/assets/components/page-header/page-header-description.png =700x*)
 
@@ -161,7 +161,7 @@ Use a `secondary` [Button](/components/button) in the Page Header when highlight
 
 ### Tertiary button
 
-A `tertiary` [Button](/components/button) should be used sparingly in the Page Header, but can be used to highlight low-priority actions like terminal instructions or to trigger a component like a [Flyout](/components/flyout) to enhance the content on the main page.
+A `tertiary` [Button](/components/button) should be used sparingly in the Page Header, but can be used to highlight low-priority actions like terminal instructions or to trigger a component like a [Flyout](/components/dialog/flyout) to enhance the content on the main page.
 
 Depending on the intended function, consider consolidating a `tertiary` Button into a [Dropdown](/components/dropdown).
 

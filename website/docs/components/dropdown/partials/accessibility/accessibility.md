@@ -15,7 +15,7 @@ Setting `@hasChevron` to `false` on ToggleIcons doesn’t provide enough afforda
 
 ### Color blind users and critical actions
 
-Color blind users, specifically those with [Achromatopsia](https://en.wikipedia.org/wiki/Achromatopsia), may have a hard time perceiving Critical ListItems within our Dropdown component. 
+Color blind users, specifically those with [Achromatopsia](https://en.wikipedia.org/wiki/Achromatopsia), may have a hard time perceiving Critical ListItems within our Dropdown component.
 
 To provide a more accessible experience, we recommend:
 
@@ -23,7 +23,7 @@ To provide a more accessible experience, we recommend:
 - Adding a relevant icon that indicates the action is destructive (e.g., `trash`).
 - Moving the Critical ListItem to the bottom of the list or the section.
     - If at the bottom of a list, consider adding a separator above the Critical ListItem to help separate it from other ListItems.
-- Adding a second confirmation layer after the user clicks “Delete” (e.g., showing a confirmation [Modal](/components/modal) that requires the user to type “Delete” into a field before proceeding).
+- Adding a second confirmation layer after the user clicks “Delete” (e.g., showing a confirmation [Modal](/components/dialog/modal) that requires the user to type “Delete” into a field before proceeding).
 
 ## Keyboard navigation
 

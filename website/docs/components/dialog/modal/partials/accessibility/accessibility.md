@@ -13,13 +13,13 @@ The Modal component is conformant when used as directed.
 
 Given the Modal is triggered via a keyboard, the dismiss button is first in the focus order since there isn’t any content within the body that is eligible to receive focus.
 
-![Simple focus within a modal](/assets/components/modal/modal-focus-order-simple.png =1042x*)
+![Simple focus within a modal](/assets/components/dialog/modal/modal-focus-order-simple.png =1042x*)
 
 ### Focus order within a complex Modal
 
-If the Modal body contains interactive content, such as input fields, the first element should receive focus first regardless of how the Modal is triggered; either via a mouse click or via the keyboard. This behaviour should be implemented by [setting the focus on the first element](/components/modal?tab=code#form-within-a-modal-dialog).
+If the Modal body contains interactive content, such as input fields, the first element should receive focus first regardless of how the Modal is triggered; either via a mouse click or via the keyboard. This behaviour should be implemented by [setting the focus on the first element](/components/dialog/modal?tab=code#form-within-a-modal-dialog).
 
-![Complex focus within a modal](/assets/components/modal/modal-focus-order-complex.png =1042x*)
+![Complex focus within a modal](/assets/components/dialog/modal/modal-focus-order-complex.png =1042x*)
 
 #### Applicable WCAG Success Criteria
 

@@ -9,7 +9,7 @@ The Flyout component is conformant when used as directed.
 When a Flyout is triggered, focus is trapped within the component.
 The dismiss button should receive focus as the first interactive element in the [DOM (document object model)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
 
-![Focus order within a simple Flyout](/assets/components/flyout/flyout-focus-order-simple.png)
+![Focus order within a simple Flyout](/assets/components/dialog/flyout/flyout-focus-order-simple.png)
 
 ### Applicable WCAG Success Criteria
 

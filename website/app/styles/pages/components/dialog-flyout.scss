@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-// COMPONENTS > FLYOUT
+// COMPONENTS > DIALOG > FLYOUT
 
-#show-content-components-flyout {
-  .doc-flyout-demo[open] {
+#show-content-components-dialog-flyout {
+  .doc-flyout-dialog-demo[open] {
     position: relative;
     z-index: initial;
     display: flex;

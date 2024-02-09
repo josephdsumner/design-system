@@ -25,7 +25,7 @@
 
 The title, the content of the Modal dialog, and the actions are passed into the Modal as yielded components, using the `Header`, `Body`, `Footer` keys.
 
-#### Modal::Header
+#### Dialog::Modal::Header
 
 A container that yields its content as the title of the Modal.
 
@@ -43,13 +43,13 @@ A container that yields its content as the title of the Modal.
   </C.Property>
 </Doc::ComponentApi>
 
-#### Modal::Body
+#### Dialog::Modal::Body
 
 The body is an unstyled, generic container that yields as the main content of the Modal. When the yielded content exceeds the available space, a scrollbar is introduced to the container.
 
 This component supports use of [`...attributes`](https://guides.emberjs.com/release/in-depth-topics/patterns-for-components/#toc_attribute-ordering).
 
-#### Modal::Footer
+#### Dialog::Modal::Footer
 
 A container that yields its content as the footer of the Modal. We recommend using it exclusively for actions using the [ButtonSet](/components/button-set) component. If a tertiary action is presented, it will always be aligned at the end of the row.
 

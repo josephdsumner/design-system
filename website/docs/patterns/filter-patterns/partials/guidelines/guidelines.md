@@ -73,7 +73,7 @@ If the filters are positioned in a page-level sidebar, the applied filters shoul
 Depending on the fetching method and complexity of the data set, global filter functions can be used to expose methods that effect the entire data set. Global functions should be differentiated from the primary filters and aligned to the end of the data set. Examples include:
 
 - Manually refreshing the data set.
-- Triggering a [Flyout](/components/flyout) with more complex filters.
+- Triggering a [Flyout](/components/dialog/flyout) with more complex filters.
 
 #### Multiple global filter functions
 
@@ -185,7 +185,7 @@ Depending on the complexity of the data set, it may be necessary to account for 
 
 ### Filter bar overflow
 
-If the number of filterable parameters exceeds the available space, consider prioritizing the most commonly used filters in the filter bar and moving less important or more complex filters to a [Flyout](/components/flyout) that can be triggered via an action in the filter bar.
+If the number of filterable parameters exceeds the available space, consider prioritizing the most commonly used filters in the filter bar and moving less important or more complex filters to a [Flyout](/components/dialog/flyout) that can be triggered via an action in the filter bar.
 
 **Hiding additional filters behind an action**
 
@@ -205,6 +205,6 @@ Don't stack multiple filter bars on top of a data set. This can result in unnece
 
 ### Sidebar overflow
 
-Given that the page-level sidebar occupies the height of the viewport, take filters within a sidebar should not overflow into an interstitial component like a [Flyout](/components/flyout). Instead, utilize the height of the viewport and the consider introducing a scrollable area within the sidebar if many filters are necessary.
+Given that the page-level sidebar occupies the height of the viewport, take filters within a sidebar should not overflow into an interstitial component like a [Flyout](/components/dialog/flyout). Instead, utilize the height of the viewport and the consider introducing a scrollable area within the sidebar if many filters are necessary.
 
 ![Filter sidebar with scroll](/assets/patterns/filter-patterns/filter-sidebar-scrollbar.png =559x*)

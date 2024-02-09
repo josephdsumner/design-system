@@ -1,6 +1,6 @@
 ## Anatomy
 
-![Anatomy of a modal](/assets/components/modal/modal-anatomy.png =729x*)
+![Anatomy of a modal](/assets/components/dialog/modal/modal-anatomy.png =729x*)
 
 | Element          | Usage                                           |
 |------------------|-------------------------------------------------|

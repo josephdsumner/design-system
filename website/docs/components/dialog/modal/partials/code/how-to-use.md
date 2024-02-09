@@ -8,7 +8,7 @@ When a Modal is open, the rest of the page becomes inert. The page scrolling is 
 
 ## Positioning
 
-As an overlaying component, the `Hds::Modal` is rendered on the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer), meaning it is always placed on top of all other elements in the page.
+As an overlaying component, the `Hds::Dialog::Modal` is rendered on the [top layer](https://developer.mozilla.org/en-US/docs/Glossary/Top_layer), meaning it is always placed on top of all other elements in the page.
 
 ## Focus and focus trap
 
@@ -26,7 +26,7 @@ When a Modal is opened with the keyboard, the focus is automatically set to the 
 />
 
 {{#if this.basicModalActive}}
-  <Hds::Modal id="basic-modal" @onClose={{fn this.deactivateModal "basicModalActive"}} as |M|>
+  <Hds::Dialog::Modal id="basic-modal" @onClose={{fn this.deactivateModal "basicModalActive"}} as |M|>
     <M.Header>
       Modal title
     </M.Header>
@@ -36,7 +36,7 @@ When a Modal is opened with the keyboard, the focus is automatically set to the 
     <M.Footer as |F|>
       <Hds::Button type="button" @text="Confirm" {{on "click" F.close}} />
     </M.Footer>
-  </Hds::Modal>
+  </Hds::Dialog::Modal>
 {{/if}}
 ```
 
@@ -54,7 +54,7 @@ When the Modal dialog contains information that might be lost on close, use a co
 />
 
 {{#if this.formModalActive}}
-  <Hds::Modal
+  <Hds::Dialog::Modal
     id="form-modal"
     @onClose={{fn this.deactivateModal "formModalActive"}}
     as |M|
@@ -85,6 +85,6 @@ When the Modal dialog contains information that might be lost on close, use a co
         />
       </Hds::ButtonSet>
     </M.Footer>
-  </Hds::Modal>
+  </Hds::Dialog::Modal>
 {{/if}}
 ```

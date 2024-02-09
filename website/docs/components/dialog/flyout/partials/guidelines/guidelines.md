@@ -8,12 +8,12 @@
 
 ### When not to use
 
-- When requesting information or feedback from the user through a form. Instead, use a [Modal](/components/modal) or consider moving the content to its own page.
+- When requesting information or feedback from the user through a form. Instead, use a [Modal](/components/dialog/modal) or consider moving the content to its own page.
 - When displaying overly complex information, consider moving the content to its own page.
 
 ### Flyout vs Modal
 
-While similar in functionality and interaction, the Flyout and [Modal](/components/modal) are meant to be used in different scenarios and to express different types of content. There is a fair amount of overlap in their usage but they differ in complexity, status and messaging, speed and regularity, and experience hierarchy.
+While similar in functionality and interaction, the Flyout and [Modal](/components/dialog/modal) are meant to be used in different scenarios and to express different types of content. There is a fair amount of overlap in their usage but they differ in complexity, status and messaging, speed and regularity, and experience hierarchy.
 
 #### Complexity
 
@@ -42,11 +42,11 @@ While each of these components is triggered by a user action, where they exist i
 
 **Fig. 1.0:** Hierarchy representation of a Modal blocking the user progression through a flow.
 
-![Modal Hierarchy in the user flow](/assets/components/flyout/flyout-vs-modal-01.png)
+![Modal Hierarchy in the user flow](/assets/components/dialog/flyout/flyout-vs-modal-01.png)
 
 **Fig. 1.1:** Hierarchy representation of the Flyout relative to the user flow.
 
-![Flyout hierarchy in the user flow](/assets/components/flyout/flyout-vs-modal-02.png)
+![Flyout hierarchy in the user flow](/assets/components/dialog/flyout/flyout-vs-modal-02.png)
 
 ### Usage examples
 
@@ -58,7 +58,7 @@ Previewing read-only content is an ideal use case for a Flyout as it keeps the u
 
 Use a Flyout as a detailed preview of an object on the main page.
 
-![Flyout with preview content](/assets/components/flyout/flyout-custom-content.png)
+![Flyout with preview content](/assets/components/dialog/flyout/flyout-custom-content.png)
 !!!
 
 #### Code snippets and examples
@@ -67,41 +67,41 @@ While code snippets and terminal scripts are usually detailed, they are well sui
 
 !!! Do
 
-![Flyout with code snippet](/assets/components/flyout/flyout-with-code-snippet.png)
+![Flyout with code snippet](/assets/components/dialog/flyout/flyout-with-code-snippet.png)
 !!!
 
 #### Forms
 
-Don't use a form in a Flyout, whether the function is creating an object, or updating an existing one. This type of content is often complex and more appropriate on its own page, or in the case of a simple form, within a [Modal](/components/modal).
+Don't use a form in a Flyout, whether the function is creating an object, or updating an existing one. This type of content is often complex and more appropriate on its own page, or in the case of a simple form, within a [Modal](/components/dialog/modal).
 
 !!! Dont
 
-![Form within a Flyout](/assets/components/flyout/form-in-flyout.png)
+![Form within a Flyout](/assets/components/dialog/flyout/form-in-flyout.png)
 !!!
 
 ## Size
 
 Medium
 
-<Hds::Flyout id="size-medium-flyout" class="doc-flyout-demo" open as |F|>
+<Hds::Dialog::Flyout id="size-medium-flyout" class="doc-flyout-dialog-demo" open as |F|>
   <F.Header>Medium Flyout</F.Header>
   <F.Body>
     <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
   </F.Body>
-</Hds::Flyout>
+</Hds::Dialog::Flyout>
 
 Large
 
-<Hds::Flyout @size="large" id="size-large-flyout" class="doc-flyout-demo" open as |F|>
+<Hds::Dialog::Flyout @size="large" id="size-large-flyout" class="doc-flyout-dialog-demo" open as |F|>
   <F.Header>Large Flyout</F.Header>
   <F.Body>
     <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
   </F.Body>
-</Hds::Flyout>
+</Hds::Dialog::Flyout>
 
 ### Best practices
 
-![Sizes of the Flyout](/assets/components/flyout/flyout-sizes.png)
+![Sizes of the Flyout](/assets/components/dialog/flyout/flyout-sizes.png)
 
 - Use a Flyout size that best accounts for the complexity and detail of the content.
 - The **medium** size accounts for the _majority_ of scenarios and is the default recommended size.
@@ -115,12 +115,12 @@ The Flyout header features several properties to better communicate the purpose 
 **With title icon**
 
 <!-- TODO: Temporary, replace with static image of Flyout Header -->
-<Hds::DialogPrimitive::Header @icon="info" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @icon="info" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 **Without title icon**
 
 <!-- TODO: Temporary, replace with static image of Flyout Header -->
-<Hds::DialogPrimitive::Header @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 #### Usage
 
@@ -133,12 +133,12 @@ The purpose and function of the Flyout should not rely solely on an icon, instea
 **With tagline**
 
 <!-- TODO: Temporary, replace with static image of Flyout Header -->
-<Hds::DialogPrimitive::Header @tagline="Tagline" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @tagline="Tagline" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 **With tagline and icon**
 
 <!-- TODO: Temporary, replace with static image of Flyout Header -->
-<Hds::DialogPrimitive::Header @tagline="Tagline" @icon="info" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @tagline="Tagline" @icon="info" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 A **tagline** helps the user maintain the context of the main page the Flyout was triggered from. Since a Flyout disables and obscures the main page content, adding a tagline can help the user understand the relationship between the Flyout and the main page.
 
@@ -156,14 +156,14 @@ A **description** provides additional information about the Flyout.
 **With description**
 
 <!-- TODO: Temporary, replace with static image of Flyout Header & Flyout Description -->
-<Hds::DialogPrimitive::Header @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
-<Hds::DialogPrimitive::Description>Description</Hds::DialogPrimitive::Description>
+<Hds::Dialog::Header @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
+<Hds::Dialog::Description>Description</Hds::Dialog::Description>
 
 **With description and icon**
 
 <!-- TODO: Temporary, replace with static image of Flyout Header & Flyout Description -->
-<Hds::DialogPrimitive::Header @icon="info" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
-<Hds::DialogPrimitive::Description>Description</Hds::DialogPrimitive::Description>
+<Hds::Dialog::Header @icon="info" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
+<Hds::Dialog::Description>Description</Hds::Dialog::Description>
 
 ## Flyout body
 
@@ -171,7 +171,7 @@ The body of the Flyout supports any custom content, local components, or Helios 
 
 ## Flyout footer
 
-The Flyout footer is a persistent content area at the bottom of the Flyout, and supports additional descriptive content, links, actions, and any other custom content or Helios components. 
+The Flyout footer is a persistent content area at the bottom of the Flyout, and supports additional descriptive content, links, actions, and any other custom content or Helios components.
 
 The Ember and Figma components account for the footer in slightly different ways, though both can achieve the same results:
 
@@ -186,21 +186,21 @@ The footer is **optional** and should be used sparingly as it increases the comp
 **With one action**
 
 <!-- TODO: Temporary, replace with static image of Flyout Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @color="primary" @text="Primary" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 
 **With two actions**
 
 <!-- TODO: Temporary, replace with static image of Flyout Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @color="primary" @text="Primary" />
     <Hds::Button @color="secondary" @text="Secondary" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 
 For more guidance and details around organizing buttons and actions, refer to the [Button organization](/patterns/button-organization) pattern documentation.
 
@@ -215,21 +215,21 @@ A Flyout supports actions within the footer allowing for basic functions to be p
 
 Use a Flyout for actions like batch selection that are secondary to the main page.
 
-![Simple actions within a Flyout](/assets/components/flyout/flyout-simple-actions.png)
+![Simple actions within a Flyout](/assets/components/dialog/flyout/flyout-simple-actions.png)
 !!!
 
 !!! Do
 
 Use a Flyout for simple declarative content like text and links that enhance the main page.
 
-![Complex footer example](/assets/components/flyout/flyout-complex-footer.png)
+![Complex footer example](/assets/components/dialog/flyout/flyout-complex-footer.png)
 !!!
 
 !!! Dont
 
 Don't use a Flyout for editing or creating objects. These are generally considered primary functions and should be handled on their own page or within a Modal in simple scenarios.
 
-![Complex actions within a Flyout](/assets/components/flyout/flyout-complex-actions.png)
+![Complex actions within a Flyout](/assets/components/dialog/flyout/flyout-complex-actions.png)
 !!!
 
 ## Dismissal
@@ -242,7 +242,7 @@ Multiple dismissal options are available that can be customized in production wi
 - Clicking with a mouse outside of the Flyout on the main page
 - Hitting the escape (`ESC`) key on a keyboard
 
-![Flyout dismissal actions](/assets/components/flyout/flyout-dismissal.png)
+![Flyout dismissal actions](/assets/components/dialog/flyout/flyout-dismissal.png)
 
 ## Positioning and responsive sizing
 
@@ -251,7 +251,7 @@ A Flyout should slide out from the right side of the viewport on top of the main
 - This is true regardless of whether there is a sidebar or navigational element that persists on the page.
 - A Flyout should overlay all content and block/disable interaction on the main page.
 
-![Flyout in a desktop viewport](/assets/components/flyout/flyout-sizing.png)
+![Flyout in a desktop viewport](/assets/components/dialog/flyout/flyout-sizing.png)
 
 !!! Info
 

@@ -16,7 +16,7 @@
 
 ### Neutral
 
-Use **Neutral** for most Modal instances, such as when the outcome of the Modal’s function doesn’t change areas of the application that aren’t directly tied to the user’s current context. 
+Use **Neutral** for most Modal instances, such as when the outcome of the Modal’s function doesn’t change areas of the application that aren’t directly tied to the user’s current context.
 
 Common examples include:
 
@@ -24,7 +24,7 @@ Common examples include:
 - Simple requests of information from the user.
 - Quick confirmations of actions taken by the user.
 
-<Hds::Modal @size="medium" @color="neutral" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="medium" @color="neutral" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Neutral modal
   </M.Header>
@@ -37,11 +37,11 @@ Common examples include:
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
 ### Warning
 
-Use **Warning** to indicate that the Modal’s action may impact a setting, item, or object. Warning Modals simultaneously alert of the potential impact while confirming the action. 
+Use **Warning** to indicate that the Modal’s action may impact a setting, item, or object. Warning Modals simultaneously alert of the potential impact while confirming the action.
 
 Common examples include:
 
@@ -49,7 +49,7 @@ Common examples include:
 - Archiving an item that can be recovered.
 - Changing a setting that may require the user to re-authenticate or perform an action again.
 
-<Hds::Modal @size="medium" @color="warning" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="medium" @color="warning" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Warning modal
   </M.Header>
@@ -62,7 +62,7 @@ Common examples include:
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
 ### Critical
 
@@ -74,7 +74,7 @@ Common examples include:
 - Modifying a setting that cannot be changed or reversed in the future.
 - Alerting the user of unsaved changes that will be discarded.
 
-<Hds::Modal @size="medium" @color="critical" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="medium" @color="critical" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Critical Modal
   </M.Header>
@@ -87,7 +87,7 @@ Common examples include:
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
 !!! Info
 
@@ -100,7 +100,7 @@ In Figma, the `critical` Modal color is coupled with the `critical` Button color
 
 We recommend using the **medium** size Modal for most scenarios, but use the size that best accounts for the complexity of the content and intended speed of interaction. We do not recommend resizing the Modal manually.
 
-<Hds::Modal @size="small" id="size-small-modal-first" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="small" id="size-small-modal-first" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Small modal
   </M.Header>
@@ -113,9 +113,9 @@ We recommend using the **medium** size Modal for most scenarios, but use the siz
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
-<Hds::Modal @size="medium" id="size-medium-modal" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="medium" id="size-medium-modal" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Medium modal
   </M.Header>
@@ -128,9 +128,9 @@ We recommend using the **medium** size Modal for most scenarios, but use the siz
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
-<Hds::Modal @size="large" id="size-large-modal" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="large" id="size-large-modal" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Large modal
   </M.Header>
@@ -143,19 +143,19 @@ We recommend using the **medium** size Modal for most scenarios, but use the siz
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
 ### Height
 
-The Modal should hug the body content and expand to a maximum height of 100% of the viewport height minus 16px from the edge. If the body content exceeds the maximum height of the viewport, scroll will be introduced within the Modal body, while the header and footer remain fixed. 
+The Modal should hug the body content and expand to a maximum height of 100% of the viewport height minus 16px from the edge. If the body content exceeds the maximum height of the viewport, scroll will be introduced within the Modal body, while the header and footer remain fixed.
 
-![Mobile layout of the Modal](/assets/components/modal/modal-mobile-sizes.png =672x*)
+![Mobile layout of the Modal](/assets/components/dialog/modal/modal-mobile-sizes.png =672x*)
 
 ## Position
 
 Modals should be positioned in the center of the viewport, paired with the overlay component, and on top of **all** parent page content (including the navigation).
 
-![Modal positioning](/assets/components/modal/modal-positioning.png =798x*)
+![Modal positioning](/assets/components/dialog/modal/modal-positioning.png =798x*)
 
 ## Modal header
 
@@ -173,12 +173,12 @@ The purpose and function of the Modal should not rely solely on an icon, instead
 An icon paired with the title can help reinforce the purpose and function of the Modal while also drawing the eye to the header and title area. Icons can be used to communicate the severity and importance of interacting with a Modal and are especially useful in a **warning** or **critical** color Modal.
 
 <!-- TODO: Temporary, replace with static image of Modal Header -->
-<Hds::DialogPrimitive::Header @icon="info" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @icon="info" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 #### Without title icon
 
 <!-- TODO: Temporary, replace with static image of Modal Header -->
-<Hds::DialogPrimitive::Header @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 ### Tagline
 
@@ -187,18 +187,18 @@ A tagline helps the user maintain the context of the feature, function, or flow 
 #### With tagline
 
 <!-- TODO: Temporary, replace with static image of Modal Header -->
-<Hds::DialogPrimitive::Header @tagline="Tagline" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @tagline="Tagline" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 #### With tagline and icon
 
 <!-- TODO: Temporary, replace with static image of Modal Header -->
-<Hds::DialogPrimitive::Header @tagline="Tagline" @icon="info" @onDismiss={{this.noop}}>Title</Hds::DialogPrimitive::Header>
+<Hds::Dialog::Header @tagline="Tagline" @icon="info" @onDismiss={{this.noop}}>Title</Hds::Dialog::Header>
 
 ## Modal body
 
-Modals can take on many different types of content, from text-based content to simple forms. 
+Modals can take on many different types of content, from text-based content to simple forms.
 
-<Hds::Modal @size="small" @color="neutral" class="doc-modal-demo" open as |M|>
+<Hds::Dialog::Modal @size="small" @color="neutral" class="doc-dialog-modal-demo" open as |M|>
   <M.Header>
     Default
   </M.Header>
@@ -211,7 +211,7 @@ Modals can take on many different types of content, from text-based content to s
       <Hds::Button type="button" @text="Cancel" @color="secondary" />
     </Hds::ButtonSet>
   </M.Footer>
-</Hds::Modal>
+</Hds::Dialog::Modal>
 
 ## Modal footer
 
@@ -224,23 +224,23 @@ Most Modals should have a low to medium level of complexity and promote interact
 We recommend using the Primary Button when only one action is present in the Modal.
 
 <!-- TODO: Temporary, replace with static image of Modal Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @text="Confirm" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 
 #### Two actions
 
 We recommend using a [ButtonSet](/components/button-set) (Primary Button followed by a Secondary Button) when two actions are present in the Modal.
 
 <!-- TODO: Temporary, replace with static image of Modal Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @text="Confirm" />
     <Hds::Button @text="Cancel" @color="secondary" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 
 #### Three actions
 
@@ -252,40 +252,40 @@ Common examples of tertiary actions include:
 - Linking to another related area or function within the application; best used to help the user better understand or collect the information needed to interact with the Modal.
 
 <!-- TODO: Temporary, replace with static image of Modal Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @text="Confirm" />
     <Hds::Button @text="Cancel" @color="secondary" />
     <Hds::Button @text="Learn more about billing" @icon="external-link" @iconPosition="trailing" @color="tertiary" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 
 ### Action content guidelines
 
-- Modal actions should be concise and not written as sentences. Most of the time, one or two words are adequate for an action. 
+- Modal actions should be concise and not written as sentences. Most of the time, one or two words are adequate for an action.
 - We generally don’t recommend using icons on actions within Modals.
 - Buttons in a Modal should follow the same content guidelines as the [Button](/components/button) component.
 
 !!! Do
 
 <!-- TODO: Temporary, replace with static image of Modal Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @text="Rename cluster" />
     <Hds::Button @text="Cancel" @color="secondary" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 !!!
 
 !!! Dont
 
 <!-- TODO: Temporary, replace with static image of Modal Footer -->
-<Hds::DialogPrimitive::Footer>
+<Hds::Dialog::Footer>
   <Hds::ButtonSet>
     <Hds::Button @text="Rename this cluster" />
     <Hds::Button @text="Don’t rename this cluster" @color="secondary" />
   </Hds::ButtonSet>
-</Hds::DialogPrimitive::Footer>
+</Hds::Dialog::Footer>
 !!!
 
 ## Dismissal
@@ -297,13 +297,13 @@ The following actions will dismiss or close the Modal unless `isDismissDisabled`
 - Hitting the escape (`ESC`) key on the keyboard
 - A cancel or close button in the footer can also act as a way to dismiss the Modal, but doesn’t always function in the same way.
 
-![Dismissal options for the Modal](/assets/components/modal/modal-dismissal-actions.png =798x*)
+![Dismissal options for the Modal](/assets/components/dialog/modal/modal-dismissal-actions.png =798x*)
 
 In addition to having proper ways for the user to dismiss a Modal, ensure the entry point for a Modal is straightforward enough that if a user accidentally dismisses it, the Modal can be easily triggered again.
 
 ### Via dismiss button
 
-The most common dismissal method for a Modal is via the dismiss button in the Modal header. This acts as an escape hatch for the user and helps prevent the user from getting stuck. 
+The most common dismissal method for a Modal is via the dismiss button in the Modal header. This acts as an escape hatch for the user and helps prevent the user from getting stuck.
 
 While we typically don’t recommend removing or hiding the dismiss button, it can be done to elevate the importance of the Modal and lower the possibility of accidental dismissal, in which case, a “cancel” button could be added as an escape hatch.
 
@@ -319,4 +319,4 @@ If a user attempts to dismiss a Modal that contains a partially filled form or o
 - The default browser notification is being triggered calling attention to a potential misstep.
 - Partially filled form data is persisted within the application to prevent duplicative work.
 
-![Default browser notification](/assets/components/modal/modal-default-browser-notification.png =271x*)
+![Default browser notification](/assets/components/dialog/modal/modal-default-browser-notification.png =271x*)

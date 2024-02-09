@@ -7,7 +7,7 @@
 ### When not to use
 
 - To communicate successful feedback on a user’s action, consider [Toast](/components/toast).
-- As a dialog to confirm an action, consider [Modal](/components/modal).
+- As a dialog to confirm an action, consider [Modal](/components/dialog/modal).
 - To flag new features (e.g., "In Preview", "Beta", "New", etc), consider [Badge](/components/badge).
 
 ## Types of alerts
@@ -62,7 +62,7 @@ Use color logically.
 
 ### Critical alerts
 
-Use critical alerts to convey crucial information or errors, such as validation errors that require user attention or action. 
+Use critical alerts to convey crucial information or errors, such as validation errors that require user attention or action.
 
 !!! Do
 

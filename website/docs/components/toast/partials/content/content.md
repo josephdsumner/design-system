@@ -18,12 +18,12 @@ We recommend using the `secondary` button variant for primary actions and the `t
   <T.Button @color="tertiary" @icon="arrow-right" @iconPosition="trailing" @text="Tertiary" />
 </Hds::Toast>
 
-For content guidelines on actions, refer to [Button](/components/button) and 
+For content guidelines on actions, refer to [Button](/components/button) and
 [Link](/components/link/standalone) documentation.
 
 ### Usage of critical buttons
 
-Avoid using critical Buttons in Toasts. We handle the prominence and importance via the styling of the Toast container itself. If needing to confirm that the user intended to interact with the action, consider displaying a confirmation [Modal](/components/modal). 
+Avoid using critical Buttons in Toasts. We handle the prominence and importance via the styling of the Toast container itself. If needing to confirm that the user intended to interact with the action, consider displaying a confirmation [Modal](/components/dialog/modal).
 
 !!! Dont
 

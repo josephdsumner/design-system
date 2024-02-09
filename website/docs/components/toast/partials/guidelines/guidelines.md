@@ -8,7 +8,7 @@
 ### When not to use
 
 - To display persistent messages or promotional content, consider [Alert](/components/alert).
-- As a dialog to confirm an action, consider [Modal](/components/modal).
+- As a dialog to confirm an action, consider [Modal](/components/dialog/modal).
 
 ## Color
 
@@ -122,11 +122,11 @@ Icons within `neutral` and `highlight` Toasts can be replaced with other icons. 
 
 ## Size
 
-Toasts can be sized between 360px and 500px wide. Anything wider than 500px will lead to implementation issues and take up too much of the screen space. 
+Toasts can be sized between 360px and 500px wide. Anything wider than 500px will lead to implementation issues and take up too much of the screen space.
 
 ## Placement
 
-Toasts should appear in the bottom right corner of the screen with a margin of 32px from the bottom and a 24px from the right side of the viewport. 
+Toasts should appear in the bottom right corner of the screen with a margin of 32px from the bottom and a 24px from the right side of the viewport.
 
 ![Toast placement example](/assets/components/toast/toast-placement.png =600x*)
 

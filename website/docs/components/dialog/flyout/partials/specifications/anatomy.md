@@ -1,6 +1,6 @@
 ## Anatomy
 
-![Flyout anatomy](/assets/components/flyout/flyout-anatomy.png)
+![Flyout anatomy](/assets/components/dialog/flyout/flyout-anatomy.png)
 
 | Element | Usage |
 |---------|-------|
