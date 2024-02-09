@@ -73,8 +73,14 @@ module('Acceptance | Percy test', function (hooks) {
     await visit('/components/dropdown');
     await percySnapshot('Dropdown');
 
-    await visit('/components/flyout');
-    await percySnapshot('Flyout');
+    await visit('/components/dialog/base-elements');
+    await percySnapshot('Dialog - Base elements');
+
+    await visit('/components/dialog/modal');
+    await percySnapshot('Dialog - Modal');
+
+    await visit('/components/dialog/flyout');
+    await percySnapshot('Dialog - Flyout');
 
     await visit('/components/form/base-elements');
     await click('button#dummy-toggle-highlight');
@@ -115,9 +121,6 @@ module('Acceptance | Percy test', function (hooks) {
 
     await visit('/components/link/standalone');
     await percySnapshot('Link Standalone');
-
-    await visit('/components/modal');
-    await percySnapshot('Modal');
 
     await visit('/components/page-header');
     await percySnapshot('PageHeader');
