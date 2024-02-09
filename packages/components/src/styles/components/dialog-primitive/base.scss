@@ -3,12 +3,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-//
-// DIALOG PRIMITIVE
-//
-
-
-// MAIN CONTAINER (<dialog>)
+// DIALOG PRIMITIVE > MAIN CONTAINER (<dialog>)
 
 // Since the `:where()` selector has a specificity of `0` (see https://developer.mozilla.org/en-US/docs/Web/CSS/:where)
 // the styles declared below are applied to the `.hds-dialog-primitive` element, but are overwritten by any other style applied via classname
@@ -61,78 +56,4 @@
   border-top: 1px solid var(--token-color-border-primary);
   border-bottom-right-radius: inherit;
   border-bottom-left-radius: inherit;
-}
-
-
-// HEADER
-
-.hds-dialog-primitive__header {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 16px 24px;
-  color: var(--token-color-foreground-strong); // default color (applied to both the title and the icon)
-  border-radius: inherit;
-}
-
-.hds-dialog-primitive__icon {
-  flex: none;
-  align-self: center;
-}
-
-.hds-dialog-primitive__title {
-  flex-grow: 1;
-}
-
-.hds-dialog-primitive__tagline {
-  margin-bottom: 4px;
-  color: var(--token-color-foreground-faint); // default color
-}
-
-.hds-dialog-primitive__dismiss {
-  align-self: center;
-}
-
-
-// DESCRIPTION
-// (currently used only in Flyout, not in Modal)
-
-.hds-dialog-primitive__description {
-  padding: 0 24px 16px;
-}
-
-
-// BODY
-
-.hds-dialog-primitive__body {
-  padding: 24px;
-}
-
-
-// FOOTER
-
-.hds-dialog-primitive__footer {
-  padding: 16px 24px;
-  background: var(--token-color-surface-faint);
-  border-radius: inherit;
-
-  // Tertiary buttons must always be placed/aligned at the end of the row
-  .hds-button-set {
-    .hds-button--color-tertiary {
-      margin-left: auto;
-    }
-  }
-}
-
-// OVERLAY
-
-.hds-dialog-primitive__overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 49;
-  background: var(--token-color-palette-neutral-700);
-  opacity: 0.5;
 }

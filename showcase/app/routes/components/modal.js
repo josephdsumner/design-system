@@ -8,7 +8,7 @@ import Route from '@ember/routing/route';
 import {
   COLORS,
   SIZES,
-} from '@hashicorp/design-system-components/components/hds/modal';
+} from '@hashicorp/design-system-components/components/hds/dialog-primitive/modal';
 
 export default class ComponentsModalRoute extends Route {
   model() {

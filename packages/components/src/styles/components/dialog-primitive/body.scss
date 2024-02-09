@@ -1,0 +1,12 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+// DIALOG PRIMITIVE > BODY
+
+@use "./vars" as *;
+
+.hds-dialog-primitive__body {
+  padding: $hds-dialog-primitive-horizontal-padding;
+}

@@ -14,12 +14,12 @@
   <Shw::Flex @direction="column" as |SF|>
     {{#each @model.SIZES as |size|}}
       <SF.Item @label={{capitalize size}} class="shw-component-flyout-sample-item">
-        <Hds::Flyout open @size={{size}} id="flyout-example-{{size}}" as |F|>
+        <Hds::DialogPrimitive::Flyout open @size={{size}} id="flyout-example-{{size}}" as |F|>
           <F.Header>{{capitalize size}}</F.Header>
           <F.Body>
             <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
           </F.Body>
-        </Hds::Flyout>
+        </Hds::DialogPrimitive::Flyout>
       </SF.Item>
     {{/each}}
   </Shw::Flex>
@@ -32,31 +32,31 @@
 
   <Shw::Flex @direction="column" as |SF|>
     <SF.Item @label="Title with icon" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-icon" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-icon" as |F|>
         <F.Header @icon="info">Title</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
         </F.Body>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="Title with tagline" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-tagline" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-tagline" as |F|>
         <F.Header @tagline="Tagline">Title</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
         </F.Body>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="Title with tagline and icon" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-tagline-icon" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-tagline-icon" as |F|>
         <F.Header @tagline="Tagline" @icon="info">A very, very long title that spans multiple lines to test this element</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
         </F.Body>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="Title with description" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-description" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-description" as |F|>
         <F.Header>Title</F.Header>
         <F.Description>
           This is a very long
@@ -68,7 +68,7 @@
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
         </F.Body>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
   </Shw::Flex>
 
@@ -78,7 +78,7 @@
 
   <Shw::Flex @direction="column" as |SF|>
     <SF.Item @label="With basic style" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-basic-style" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-basic-style" as |F|>
         <F.Header @tagline="Tagline" @icon="info">
           Title
         </F.Header>
@@ -94,15 +94,15 @@
             tools we use for collecting data. To opt out of a category of data collection, set the toggle to “Off” and
             save your preferences.</p>
         </F.Body>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="With generic content" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-generic-content" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-generic-content" as |F|>
         <F.Header @icon="info">Title</F.Header>
         <F.Body>
           <Shw::Placeholder @text="some generic content" @height="50" />
         </F.Body>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
   </Shw::Flex>
 
@@ -112,7 +112,7 @@
 
   <Shw::Flex @direction="column" as |SF|>
     <SF.Item @label="One action" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-one-action" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-one-action" as |F|>
         <F.Header>Title</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
@@ -120,10 +120,10 @@
         <F.Footer>
           <Hds::Button type="submit" @text="Primary" />
         </F.Footer>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="Two actions" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-two-actions" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-two-actions" as |F|>
         <F.Header>Title</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
@@ -134,10 +134,10 @@
             <Hds::Button type="button" @text="Secondary" @color="secondary" />
           </Hds::ButtonSet>
         </F.Footer>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="Three actions" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-three-action" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-three-action" as |F|>
         <F.Header>Title</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
@@ -155,10 +155,10 @@
             />
           </Hds::ButtonSet>
         </F.Footer>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
     <SF.Item @label="Generic footer content" class="shw-component-flyout-sample-item">
-      <Hds::Flyout open id="flyout-example-footer-generic" as |F|>
+      <Hds::DialogPrimitive::Flyout open id="flyout-example-footer-generic" as |F|>
         <F.Header>Title</F.Header>
         <F.Body>
           <p class="hds-typography-body-300 hds-foreground-primary">Flyout content</p>
@@ -166,7 +166,7 @@
         <F.Footer>
           <Shw::Placeholder @text="some generic content" @height="50" />
         </F.Footer>
-      </Hds::Flyout>
+      </Hds::DialogPrimitive::Flyout>
     </SF.Item>
   </Shw::Flex>
 
@@ -181,7 +181,7 @@
   <button type="button" {{on "click" (fn this.activateFlyout "largeFlyoutActive")}}>Open large flyout</button>
 
   {{#if this.mediumFlyoutActive}}
-    <Hds::Flyout id="medium-flyout" @onClose={{fn this.deactivateFlyout "mediumFlyoutActive"}} as |F|>
+    <Hds::DialogPrimitive::Flyout id="medium-flyout" @onClose={{fn this.deactivateFlyout "mediumFlyoutActive"}} as |F|>
       <F.Header>
         Medium flyout title
       </F.Header>
@@ -215,11 +215,16 @@
       <F.Footer as |FF|>
         <Hds::Button type="button" @text="Primary" {{on "click" FF.close}} />
       </F.Footer>
-    </Hds::Flyout>
+    </Hds::DialogPrimitive::Flyout>
   {{/if}}
 
   {{#if this.largeFlyoutActive}}
-    <Hds::Flyout id="large-flyout" @size="large" @onClose={{fn this.deactivateFlyout "largeFlyoutActive"}} as |F|>
+    <Hds::DialogPrimitive::Flyout
+      id="large-flyout"
+      @size="large"
+      @onClose={{fn this.deactivateFlyout "largeFlyoutActive"}}
+      as |F|
+    >
       <F.Header>
         Large flyout title
       </F.Header>
@@ -249,6 +254,6 @@
           <Hds::Button type="button" @text="Secondary" @color="secondary" {{on "click" FF.close}} />
         </Hds::ButtonSet>
       </F.Footer>
-    </Hds::Flyout>
+    </Hds::DialogPrimitive::Flyout>
   {{/if}}
 </section>
