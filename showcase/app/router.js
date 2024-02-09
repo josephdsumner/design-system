@@ -30,9 +30,12 @@ Router.map(function () {
     this.route('button-set');
     this.route('card');
     this.route('code-block');
-    this.route('dialog-primitive');
+    this.route('dialog', function () {
+      this.route('base-elements');
+      this.route('modal');
+      this.route('flyout');
+    });
     this.route('dropdown');
-    this.route('flyout');
     this.route('form', function () {
       this.route('base-elements');
       this.route('checkbox');
@@ -50,7 +53,6 @@ Router.map(function () {
       this.route('inline');
       this.route('standalone');
     });
-    this.route('modal');
     this.route('page-header');
     this.route('pagination');
     this.route('reveal');

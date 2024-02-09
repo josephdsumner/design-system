@@ -1,0 +1,23 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+//
+// DIALOG > INDEX
+//
+
+// primitives
+
+@use "./base";
+@use "./header";
+@use "./description";
+@use "./body";
+@use "./footer";
+@use "./overlay";
+
+
+// components
+
+@use "./modal";
+@use "./flyout";

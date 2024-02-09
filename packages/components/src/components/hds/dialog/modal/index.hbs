@@ -1,0 +1,28 @@
+{{!
+  Copyright (c) HashiCorp, Inc.
+  SPDX-License-Identifier: MPL-2.0
+}}
+<Hds::Dialog::Base
+  class={{this.classNames}}
+  ...attributes
+  aria-labelledby={{this.id}}
+  {{did-insert this.didInsert}}
+  {{will-destroy this.willDestroyNode}}
+  {{focus-trap isActive=this.isOpen focusTrapOptions=(hash onDeactivate=this.onDismiss clickOutsideDeactivates=true)}}
+>
+  <:header>
+    {{yield
+      (hash Header=(component "hds/dialog/header" id=this.id onDismiss=this.onDismiss extraClass="hds-modal__header"))
+    }}
+  </:header>
+  <:body>
+    {{yield (hash Body=(component "hds/dialog/body" extraClass="hds-modal__body"))}}
+  </:body>
+  <:footer>
+    {{yield (hash Footer=(component "hds/dialog/footer" onDismiss=this.onDismiss extraClass="hds-modal__footer"))}}
+  </:footer>
+</Hds::Dialog::Base>
+
+{{#if this.isOpen}}
+  <Hds::Dialog::Overlay />
+{{/if}}

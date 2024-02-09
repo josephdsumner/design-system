@@ -1,0 +1,24 @@
+{{!
+  Copyright (c) HashiCorp, Inc.
+  SPDX-License-Identifier: MPL-2.0
+}}
+
+<div class="hds-dialog__header {{@extraClass}}" ...attributes>
+  {{#if @icon}}
+    <FlightIcon class="hds-dialog__icon" @name={{@icon}} @size="24" @isInlineBlock={{false}} />
+  {{/if}}
+
+  <div class="hds-dialog__title" id={{@id}}>
+    {{#if @tagline}}
+      <Hds::Text::Body class="hds-dialog__tagline" @tag="div" @size="100">
+        {{@tagline}}
+      </Hds::Text::Body>
+    {{/if}}
+
+    <Hds::Text::Display @tag="div" @size="300" @weight="semibold">
+      {{yield}}
+    </Hds::Text::Display>
+  </div>
+
+  <Hds::DismissButton class="hds-dialog__dismiss" {{on "click" this.onDismiss}} />
+</div>

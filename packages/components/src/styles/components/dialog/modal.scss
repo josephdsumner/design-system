@@ -1,0 +1,66 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+//
+// MODAL
+//
+
+.hds-modal {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  height: fit-content;
+  margin: auto;
+  padding: 0;
+  background: var(--token-color-surface-primary);
+  border-radius: 8px;
+  box-shadow: var(--token-surface-overlay-box-shadow);
+
+  // we hide the native `::backdrop` pseudo-element in favor of using
+  // an `hds-modal__overlay` element to detect click events with more ease
+  &::backdrop {
+    display: none;
+  }
+}
+
+// VARIATIONS
+
+.hds-modal--size-small {
+  width: min(400px, 95vw);
+}
+
+.hds-modal--size-medium {
+  width: min(600px, 95vw);
+}
+
+.hds-modal--size-large {
+  width: min(800px, 95vw);
+}
+
+// Note ".hds-modal--color-neutral" uses default color and background-color styles from the dialog
+
+.hds-modal--color-warning {
+  .hds-dialog__wrapper-header {
+    color: var(--token-color-foreground-warning-on-surface);
+    background: var(--token-color-surface-warning);
+    border-bottom: 1px solid var(--token-color-border-warning);
+  }
+
+  .hds-dialog__tagline {
+    color: var(--token-color-foreground-warning-on-surface);
+  }
+}
+
+.hds-modal--color-critical {
+  .hds-dialog__wrapper-header {
+    color: var(--token-color-foreground-critical-on-surface);
+    background: var(--token-color-surface-critical);
+    border-bottom: 1px solid var(--token-color-border-critical);
+  }
+
+  .hds-dialog__tagline {
+    color: var(--token-color-foreground-critical-on-surface);
+  }
+}

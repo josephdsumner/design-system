@@ -1,0 +1,35 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+// DIALOG > HEADER
+
+@use "./vars" as *;
+
+.hds-dialog__header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: $hds-dialog-vertical-padding $hds-dialog-horizontal-padding;
+  color: var(--token-color-foreground-strong); // default color (applied to both the title and the icon)
+  border-radius: inherit;
+}
+
+.hds-dialog__icon {
+  flex: none;
+  align-self: center;
+}
+
+.hds-dialog__title {
+  flex-grow: 1;
+}
+
+.hds-dialog__tagline {
+  margin-bottom: 4px;
+  color: var(--token-color-foreground-faint); // default color
+}
+
+.hds-dialog__dismiss {
+  align-self: center;
+}

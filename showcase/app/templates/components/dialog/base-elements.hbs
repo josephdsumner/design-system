@@ -1,0 +1,220 @@
+{{!
+  Copyright (c) HashiCorp, Inc.
+  SPDX-License-Identifier: MPL-2.0
+}}
+
+{{page-title "Dialog / Base elements"}}
+
+<Shw::Text::H1>Dialog / Base elements</Shw::Text::H1>
+
+<section data-test-percy>
+
+  <Shw::Text::H2>Dialog (base)</Shw::Text::H2>
+
+  <Shw::Text::H3>With generic content</Shw::Text::H3>
+
+  <Shw::Flex {{style gap="2rem"}} as |SF|>
+    <SF.Item @label="Header + Body + Footer">
+      <div class="shw-component-dialog-base-container">
+        <Hds::Dialog::Base open>
+          <:header>
+            <Shw::Placeholder @text="header" @height="60px" />
+          </:header>
+          <:body>
+            <Shw::Placeholder @text="body" @height="300px" @background="#fafafa" />
+          </:body>
+          <:footer>
+            <Shw::Placeholder @text="footer" @height="60px" />
+          </:footer>
+        </Hds::Dialog::Base>
+      </div>
+    </SF.Item>
+    <SF.Item @label="Header + Body (scrollable) + Footer">
+      <div class="shw-component-dialog-base-container">
+        <Hds::Dialog::Base open>
+          <:header>
+            <Shw::Placeholder @height="60px" @text="header" />
+          </:header>
+          <:body>
+            <Shw::Placeholder @height="500px" @text="body" @background="#fafafa" />
+          </:body>
+          <:footer>
+            <Shw::Placeholder @height="60px" @text="footer" />
+          </:footer>
+        </Hds::Dialog::Base>
+      </div>
+    </SF.Item>
+  </Shw::Flex>
+
+  <Shw::Divider @level={{2}} />
+
+  <Shw::Text::H3>With primitives</Shw::Text::H3>
+
+  <Shw::Flex {{style gap="2rem"}} as |SF|>
+    <SF.Item @label="Header + Description + Body + Footer">
+      <div class="shw-component-dialog-base-container">
+        <Hds::Dialog::Base open>
+          <:header>
+            <Hds::Dialog::Header @icon="info" @tagline="Tagline">Title</Hds::Dialog::Header>
+            <Hds::Dialog::Description>Description</Hds::Dialog::Description>
+          </:header>
+          <:body>
+            <Hds::Dialog::Body>
+              <p class="hds-typography-body-300 hds-foreground-primary">Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Libero culpa expedita assumenda at nisi minus unde fuga iure suscipit aut qui, odit
+                natus eum voluptates ut molestiae! Perferendis, impedit qui? Lorem ipsum dolor sit amet?</p>
+            </Hds::Dialog::Body>
+          </:body>
+          <:footer>
+            <Hds::Dialog::Footer>
+              <Hds::ButtonSet>
+                <Hds::Button type="submit" @text="Primary" />
+                <Hds::Button type="button" @text="Secondary" @color="secondary" />
+              </Hds::ButtonSet>
+            </Hds::Dialog::Footer>
+          </:footer>
+        </Hds::Dialog::Base>
+      </div>
+    </SF.Item>
+  </Shw::Flex>
+
+</section>
+
+<Shw::Divider />
+
+<section class="shw-component-dialog-base-elements-section" data-test-percy>
+
+  <Shw::Text::H2>Dialog::Header</Shw::Text::H2>
+
+  <Shw::Flex @direction="column" as |SF|>
+    <SF.Item @label="title only">
+      <div class="hds-dialog__wrapper-header">
+        <Hds::Dialog::Header>
+          Title
+        </Hds::Dialog::Header>
+      </div>
+    </SF.Item>
+    <SF.Item @label="with icon">
+      <div class="hds-dialog__wrapper-header">
+        <Hds::Dialog::Header @icon="info" @onDismiss={{this.onDismiss}}>
+          Title
+        </Hds::Dialog::Header>
+      </div>
+    </SF.Item>
+    <SF.Item @label="with tagline">
+      <div class="hds-dialog__wrapper-header">
+        <Hds::Dialog::Header @tagline="Tagline" @onDismiss={{this.onDismiss}}>
+          Title
+        </Hds::Dialog::Header>
+      </div>
+    </SF.Item>
+    <SF.Item @label="with tagline and icon">
+      <div class="hds-dialog__wrapper-header">
+        <Hds::Dialog::Header @icon="info" @tagline="Tagline" @onDismiss={{this.onDismiss}}>
+          Title
+        </Hds::Dialog::Header>
+      </div>
+    </SF.Item>
+    <SF.Item @label="with very long content">
+      <div class="hds-dialog__wrapper-header">
+        <Hds::Dialog::Header
+          @icon="info"
+          @tagline="Tagline with very, very long content that spans multiple lines to test this element, very, very long content that spans multiple lines to test this element, very, very long content that spans multiple lines to test this element"
+        >
+          Title with very, very long content that spans multiple lines to test this element, very, very long content
+          that spans multiple lines to test this element
+        </Hds::Dialog::Header>
+      </div>
+    </SF.Item>
+  </Shw::Flex>
+
+  <Shw::Divider />
+
+  <Shw::Text::H2>Dialog::Description</Shw::Text::H2>
+
+  <Shw::Flex @direction="column" as |SF|>
+    <SF.Item>
+      <Hds::Dialog::Description>
+        This is a very long
+        <strong>description</strong>
+        to test appropriate text
+        <Hds::Link::Inline @href="#">wrapping</Hds::Link::Inline>
+        and formatting on this element. This is a very long
+        <strong>description</strong>
+        to test appropriate text
+        <Hds::Link::Inline @href="#">wrapping</Hds::Link::Inline>
+        and formatting on this element.
+      </Hds::Dialog::Description>
+    </SF.Item>
+  </Shw::Flex>
+
+  <Shw::Divider />
+
+  <Shw::Text::H2>Dialog::Body</Shw::Text::H2>
+
+  <Shw::Flex @direction="column" as |SF|>
+    <SF.Item @label="With basic style">
+      <Hds::Dialog::Body>
+        <p class="hds-typography-body-300 hds-foreground-primary">HashiCorp uses data collected by cookies and
+          JavaScript libraries to improve your browsing experience, analyze site traffic, and increase the overall
+          performance of our site. By using our website, you’re agreeing to our Privacy Policy and Cookie Policy.</p>
+        <br />
+        <p class="hds-typography-body-300 hds-foreground-primary">The categories below outline which companies and tools
+          we use for collecting data. To opt out of a category of data collection, set the toggle to “Off” and save your
+          preferences.</p>
+      </Hds::Dialog::Body>
+    </SF.Item>
+    <SF.Item @label="With generic content">
+      <Hds::Dialog::Body>
+        <Shw::Placeholder @text="some generic content" @height="50" />
+      </Hds::Dialog::Body>
+    </SF.Item>
+  </Shw::Flex>
+
+  <Shw::Divider />
+
+  <Shw::Text::H2>Dialog::Footer</Shw::Text::H2>
+
+  <Shw::Flex @direction="column" as |SF|>
+    <SF.Item @label="One action">
+      <Hds::Dialog::Footer>
+        <Hds::Button type="submit" @text="Primary" />
+      </Hds::Dialog::Footer>
+    </SF.Item>
+    <SF.Item @label="Two actions">
+      <Hds::Dialog::Footer>
+        <Hds::ButtonSet>
+          <Hds::Button type="submit" @text="Primary" />
+          <Hds::Button type="button" @text="Secondary" @color="secondary" />
+        </Hds::ButtonSet>
+      </Hds::Dialog::Footer>
+    </SF.Item>
+    <SF.Item @label="Three actions">
+      <Hds::Dialog::Footer>
+        <Hds::ButtonSet>
+          <Hds::Button type="submit" @text="Primary" />
+          <Hds::Button type="button" @text="Secondary" @color="secondary" />
+          <Hds::Button type="button" @text="Tertiary" @color="tertiary" @icon="arrow-right" @iconPosition="trailing" />
+        </Hds::ButtonSet>
+      </Hds::Dialog::Footer>
+    </SF.Item>
+    <SF.Item @label="Generic footer content">
+      <Hds::Dialog::Footer>
+        <Shw::Placeholder @text="some generic content" @height="50" />
+      </Hds::Dialog::Footer>
+    </SF.Item>
+  </Shw::Flex>
+
+  <Shw::Divider />
+
+  <Shw::Text::H2>Dialog::Overlay</Shw::Text::H2>
+
+  <Shw::Flex @direction="column" as |SF|>
+    <SF.Item @label="Overlay element">
+      <div class="shw-component-dialog-overlay-container">
+        <Hds::Dialog::Overlay />
+      </div>
+    </SF.Item>
+  </Shw::Flex>
+
+</section>

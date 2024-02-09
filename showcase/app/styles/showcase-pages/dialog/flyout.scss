@@ -1,0 +1,20 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+// DIALOG > FLYOUT
+
+body.components-dialog-flyout {
+  .shw-component-dialog-flyout-sample-item {
+    margin-bottom: 30px;
+
+    .hds-flyout[open] {
+      position: relative;
+      z-index: initial;
+      display: flex;
+      height: 40vh;
+      margin: 0;
+    }
+  }
+}

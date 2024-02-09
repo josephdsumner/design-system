@@ -37,11 +37,12 @@
 @import "./showcase-pages/code-block";
 @import "./showcase-pages/copy/button";
 @import "./showcase-pages/copy/snippet";
-@import "./showcase-pages/dialog-primitive";
+@import "./showcase-pages/dialog/base-elements";
+@import "./showcase-pages/dialog/flyout";
+@import "./showcase-pages/dialog/modal";
 @import "./showcase-pages/disclosure-primitive";
 @import "./showcase-pages/dismiss-button";
 @import "./showcase-pages/dropdown";
-@import "./showcase-pages/flyout";
 @import "./showcase-pages/form/base-elements";
 @import "./showcase-pages/form/checkbox";
 @import "./showcase-pages/form/file-input";
@@ -52,7 +53,6 @@
 @import "./showcase-pages/form/toggle";
 @import "./showcase-pages/link-inline";
 @import "./showcase-pages/menu-primitive";
-@import "./showcase-pages/modal";
 @import "./showcase-pages/pagination";
 @import "./showcase-pages/power-select";
 @import "./showcase-pages/reveal";

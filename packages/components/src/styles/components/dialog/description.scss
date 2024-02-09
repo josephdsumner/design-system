@@ -1,0 +1,13 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+// DIALOG > DESCRIPTION
+// (currently used only in Flyout, not in Modal)
+
+@use "./vars" as *;
+
+.hds-dialog__description {
+  padding: 0 $hds-dialog-horizontal-padding $hds-dialog-vertical-padding;
+}
