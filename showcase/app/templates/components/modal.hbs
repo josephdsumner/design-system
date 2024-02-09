@@ -14,7 +14,7 @@
   <Shw::Flex @direction="column" as |SF|>
     {{#each @model.SIZES as |size|}}
       <SF.Item @label={{capitalize size}} class="shw-component-modal-sample-item">
-        <Hds::Modal open @size={{size}} id="modal-example-{{size}}" as |M|>
+        <Hds::DialogPrimitive::Modal open @size={{size}} id="modal-example-{{size}}" as |M|>
           <M.Header>
             {{capitalize size}}
           </M.Header>
@@ -27,7 +27,7 @@
               <Hds::Button type="button" @text="Cancel" @color="secondary" />
             </Hds::ButtonSet>
           </M.Footer>
-        </Hds::Modal>
+        </Hds::DialogPrimitive::Modal>
       </SF.Item>
     {{/each}}
   </Shw::Flex>
@@ -39,7 +39,7 @@
   <Shw::Flex @direction="column" as |SF|>
     {{#each @model.COLORS as |color|}}
       <SF.Item @label={{capitalize color}} class="shw-component-modal-sample-item">
-        <Hds::Modal open @color={{color}} id="modal-example-{{color}}" as |M|>
+        <Hds::DialogPrimitive::Modal open @color={{color}} id="modal-example-{{color}}" as |M|>
           <M.Header
             @icon={{concat (if (eq color "warning") "alert-triangle") (if (eq color "critical") "alert-diamond")}}
             @tagline="Tagline"
@@ -55,7 +55,7 @@
               <Hds::Button type="button" @text="Cancel" @color="secondary" />
             </Hds::ButtonSet>
           </M.Footer>
-        </Hds::Modal>
+        </Hds::DialogPrimitive::Modal>
       </SF.Item>
     {{/each}}
   </Shw::Flex>
@@ -68,7 +68,7 @@
 
   <Shw::Flex @direction="column" as |SF|>
     <SF.Item @label="With icon" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-icon" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-icon" as |M|>
         <M.Header @icon="info">
           Title
         </M.Header>
@@ -81,10 +81,10 @@
             <Hds::Button type="button" @text="Cancel" @color="secondary" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
     <SF.Item @label="With tagline" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-tagline" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-tagline" as |M|>
         <M.Header @tagline="Tagline">
           Title
         </M.Header>
@@ -97,10 +97,10 @@
             <Hds::Button type="button" @text="Cancel" @color="secondary" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
     <SF.Item @label="With tagline and icon" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-tagline-icon" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-tagline-icon" as |M|>
         <M.Header @tagline="Tagline" @icon="info">
           Title
         </M.Header>
@@ -113,7 +113,7 @@
             <Hds::Button type="button" @text="Cancel" @color="secondary" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
   </Shw::Flex>
 
@@ -123,7 +123,7 @@
 
   <Shw::Flex @direction="column" as |SF|>
     <SF.Item @label="With basic style" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-basic-content" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-basic-content" as |M|>
         <M.Header @tagline="Tagline" @icon="info">
           A very, very long title that spans multiple lines to test this element
         </M.Header>
@@ -142,10 +142,10 @@
             <Hds::Button type="button" @text="Cancel" @color="secondary" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
     <SF.Item @label="With generic content" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-generic-content" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-generic-content" as |M|>
         <M.Header>
           Title
         </M.Header>
@@ -158,7 +158,7 @@
             <Hds::Button type="button" @text="Cancel" @color="secondary" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
   </Shw::Flex>
 
@@ -168,7 +168,7 @@
 
   <Shw::Flex @direction="column" as |SF|>
     <SF.Item @label="One action" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-one-action" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-one-action" as |M|>
         <M.Header>
           Title
         </M.Header>
@@ -180,10 +180,10 @@
             <Hds::Button type="submit" @text="Confirm" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
     <SF.Item @label="Two actions" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-two-actions" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-two-actions" as |M|>
         <M.Header>
           Title
         </M.Header>
@@ -196,10 +196,10 @@
             <Hds::Button type="button" @text="Cancel" @color="secondary" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
     <SF.Item @label="Three actions" class="shw-component-modal-sample-item">
-      <Hds::Modal open id="modal-example-three-actions" as |M|>
+      <Hds::DialogPrimitive::Modal open id="modal-example-three-actions" as |M|>
         <M.Header>
           Title
         </M.Header>
@@ -213,7 +213,7 @@
             <Hds::Button type="button" @text="Tertiary" @color="tertiary" @icon="plus" />
           </Hds::ButtonSet>
         </M.Footer>
-      </Hds::Modal>
+      </Hds::DialogPrimitive::Modal>
     </SF.Item>
   </Shw::Flex>
 
@@ -227,7 +227,7 @@
   <button type="button" {{on "click" (fn this.activateModal "basicModalActive")}}>Open basic modal</button>
 
   {{#if this.basicModalActive}}
-    <Hds::Modal id="basic-modal" @onClose={{fn this.deactivateModal "basicModalActive"}} as |M|>
+    <Hds::DialogPrimitive::Modal id="basic-modal" @onClose={{fn this.deactivateModal "basicModalActive"}} as |M|>
       <M.Header>
         Modal title
       </M.Header>
@@ -237,13 +237,13 @@
       <M.Footer as |F|>
         <Hds::Button type="button" @text="Confirm" {{on "click" F.close}} />
       </M.Footer>
-    </Hds::Modal>
+    </Hds::DialogPrimitive::Modal>
   {{/if}}
 
   <button type="button" {{on "click" (fn this.activateModal "longModalActive")}}>Open long content modal</button>
 
   {{#if this.longModalActive}}
-    <Hds::Modal id="long-modal" @size="small" @onClose={{fn this.deactivateModal "longModalActive"}} as |M|>
+    <Hds::DialogPrimitive::Modal id="long-modal" @size="small" @onClose={{fn this.deactivateModal "longModalActive"}} as |M|>
       <M.Header>
         Modal title
       </M.Header>
@@ -273,14 +273,14 @@
       <M.Footer as |F|>
         <Hds::Button type="button" @text="Confirm" {{on "click" F.close}} />
       </M.Footer>
-    </Hds::Modal>
+    </Hds::DialogPrimitive::Modal>
   {{/if}}
 
   <button type="button" {{on "click" (fn this.activateModal "formModalActive")}}>Open form modal</button>
 
   {{! template-lint-disable no-autofocus-attribute }}
   {{#if this.formModalActive}}
-    <Hds::Modal id="form-modal" @onClose={{fn this.deactivateModal "formModalActive"}} as |M|>
+    <Hds::DialogPrimitive::Modal id="form-modal" @onClose={{fn this.deactivateModal "formModalActive"}} as |M|>
       <M.Header>
         Why do you want to leave the beta?
       </M.Header>
@@ -303,13 +303,13 @@
           <Hds::Button type="button" @text="Cancel" @color="secondary" {{on "click" F.close}} />
         </Hds::ButtonSet>
       </M.Footer>
-    </Hds::Modal>
+    </Hds::DialogPrimitive::Modal>
   {{/if}}
 
   <button type="button" {{on "click" (fn this.activateModal "tabsModalActive")}}>Open tabs modal</button>
 
   {{#if this.tabsModalActive}}
-    <Hds::Modal id="tabs-modal" @onClose={{fn this.deactivateModal "tabsModalActive"}} as |M|>
+    <Hds::DialogPrimitive::Modal id="tabs-modal" @onClose={{fn this.deactivateModal "tabsModalActive"}} as |M|>
       <M.Header>
         Modal title
       </M.Header>
@@ -332,7 +332,7 @@
       <M.Footer as |F|>
         <Hds::Button type="button" @text="Confirm" {{on "click" F.close}} />
       </M.Footer>
-    </Hds::Modal>
+    </Hds::DialogPrimitive::Modal>
   {{/if}}
 
 </section>

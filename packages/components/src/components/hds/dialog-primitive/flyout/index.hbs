@@ -1,0 +1,35 @@
+{{!
+  Copyright (c) HashiCorp, Inc.
+  SPDX-License-Identifier: MPL-2.0
+}}
+<Hds::DialogPrimitive
+  class={{this.classNames}}
+  ...attributes
+  aria-labelledby={{this.id}}
+  {{did-insert this.didInsert}}
+  {{will-destroy this.willDestroyNode}}
+  {{focus-trap isActive=this.isOpen focusTrapOptions=(hash onDeactivate=this.onDismiss clickOutsideDeactivates=true)}}
+>
+  <:header>
+    {{yield
+      (hash
+        Header=(component
+          "hds/dialog-primitive/header" id=this.id onDismiss=this.onDismiss extraClass="hds-flyout__header"
+        )
+        Description=(component "hds/dialog-primitive/description" extraClass="hds-flyout__description")
+      )
+    }}
+  </:header>
+  <:body>
+    {{yield (hash Body=(component "hds/dialog-primitive/body" extraClass="hds-flyout__body"))}}
+  </:body>
+  <:footer>
+    {{yield
+      (hash Footer=(component "hds/dialog-primitive/footer" onDismiss=this.onDismiss extraClass="hds-flyout__footer"))
+    }}
+  </:footer>
+</Hds::DialogPrimitive>
+
+{{#if this.isOpen}}
+  <Hds::DialogPrimitive::Overlay />
+{{/if}}
