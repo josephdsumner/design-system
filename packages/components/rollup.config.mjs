@@ -39,7 +39,7 @@ const plugins = [
   // babel.config.json.
   babel({
     babelHelpers: 'bundled',
-    extensions: ['.js', '.ts'],
+    extensions: ['.js', '.ts', '.gjs', '.gts'],
   }),
 
   // Follow the V2 Addon rules about dependencies. Your code can import from

@@ -10,6 +10,7 @@
     "allowJs": true,
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
+    "noPropertyAccessFromIndexSignature": false,
     "paths": {
       "@hashicorp/design-system-components": [
         "src"
@@ -18,12 +19,14 @@
         "src/*"
       ],
       "*": [
-        "types/*"
+        "types/*",
+        "src/types/*"
       ]
     }
   },
   "include": [
     "src/**/*",
+    "src/types/*",
     "unpublished-development-types/**/*"
   ],
   "exclude": [
