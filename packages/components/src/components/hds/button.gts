@@ -5,7 +5,14 @@
 
 import Component from '@glimmer/component';
 import { assert } from '@ember/debug';
-import { type HdsInteractiveSignature } from '../interactive';
+import HdsInteractive, { type HdsInteractiveSignature } from './interactive';
+import hdsLinkToModels from '../../helpers/hds-link-to-models';
+import hdsLinkToQuery from '../../helpers/hds-link-to-query';
+
+import FlightIcon from '@hashicorp/ember-flight-icons/components/flight-icon';
+
+// @ts-expect-error why doesn't the declare module in global.d.ts fix this?
+import { eq } from 'ember-truth-helpers';
 
 export const DEFAULT_SIZE = 'medium';
 export const DEFAULT_COLOR = 'primary';
@@ -189,6 +196,54 @@ export default class HdsButtonIndexComponent extends Component<HdsButtonSignatur
 
     return classes.join(' ');
   }
+
+  <template>
+    {{!
+      Copyright (c) HashiCorp, Inc.
+      SPDX-License-Identifier: MPL-2.0
+    }}
+    <HdsInteractive
+      class={{this.classNames}}
+      @current-when={{@current-when}}
+      @models={{hdsLinkToModels @model @models}}
+      @query={{hdsLinkToQuery @query}}
+      @replace={{@replace}}
+      @route={{@route}}
+      @isRouteExternal={{@isRouteExternal}}
+      @href={{@href}}
+      @isHrefExternal={{@isHrefExternal}}
+      ...attributes
+      aria-label={{if this.isIconOnly this.text null}}
+    >
+      {{#if this.isIconOnly}}
+        <span class="hds-button__icon">
+          <FlightIcon @name={{this.icon}} @size={{this.iconSize}} @stretched={{true}} />
+        </span>
+      {{else}}
+        {{#if this.icon}}
+          {{#if (eq this.iconPosition "leading")}}
+            <span class="hds-button__icon">
+              <FlightIcon @name={{this.icon}} @size={{this.iconSize}} @stretched={{true}} />
+            </span>
+            <span class="hds-button__text">
+              {{this.text}}
+            </span>
+          {{else}}
+            <span class="hds-button__text">
+              {{this.text}}
+            </span>
+            <span class="hds-button__icon">
+              <FlightIcon @name={{this.icon}} @size={{this.iconSize}} @stretched={{true}} />
+            </span>
+          {{/if}}
+        {{else}}
+          <span class="hds-button__text">
+            {{this.text}}
+          </span>
+        {{/if}}
+      {{/if}}
+    </HdsInteractive>
+  </template>
 }
 
 declare module '@glint/environment-ember-loose/registry' {
