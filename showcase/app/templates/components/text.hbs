@@ -1,8 +1,10 @@
+{{! @glint-nocheck: not typesafe yet }}
 {{!
   Copyright (c) HashiCorp, Inc.
   SPDX-License-Identifier: MPL-2.0
 }}
 
+{{! @glint-expect-error }}
 {{page-title "Text component"}}
 
 <Shw::Text::H1>Text</Shw::Text::H1>
@@ -20,8 +22,10 @@
 
   <Shw::Text::H4 @tag="h3">Text::Display</Shw::Text::H4>
   <Shw::Flex @direction="column" as |SF|>
+    {{! @glint-expect-error }}
     {{#each this.model.DISPLAY_AVAILABLE_SIZES as |size|}}
       <SF.Item @label="size={{size}}">
+        {{! @glint-expect-error }}
         {{#let (get this.model.DISPLAY_AVAILABLE_WEIGHTS_PER_SIZE size) as |weights|}}
           {{#each weights as |weight|}}
             <Hds::Text::Display @size={{size}} @tag="p" @weight={{weight}}>The fox jumped over the lazy dog ({{weight}})</Hds::Text::Display>
@@ -33,8 +37,10 @@
 
   <Shw::Text::H4 @tag="h3">Text::Body</Shw::Text::H4>
   <Shw::Flex @direction="column" as |SF|>
+    {{! @glint-expect-error }}
     {{#each this.model.BODY_AVAILABLE_SIZES as |size|}}
       <SF.Item @label="size={{size}}">
+        {{! @glint-expect-error }}
         {{#let (get this.model.BODY_AVAILABLE_WEIGHTS_PER_SIZE size) as |weights|}}
           {{#each weights as |weight|}}
             <Hds::Text::Body @size={{size}} @tag="p" @weight={{weight}}>The fox jumped over the lazy dog ({{weight}})</Hds::Text::Body>
@@ -46,8 +52,10 @@
 
   <Shw::Text::H4 @tag="h3">Text::Code</Shw::Text::H4>
   <Shw::Flex @direction="column" as |SF|>
+    {{! @glint-expect-error }}
     {{#each this.model.CODE_AVAILABLE_SIZES as |size|}}
       <SF.Item @label="size={{size}}">
+        {{! @glint-expect-error }}
         {{#let (get this.model.CODE_AVAILABLE_WEIGHTS_PER_SIZE size) as |weights|}}
           {{#each weights as |weight|}}
             <Hds::Text::Code @size={{size}} @tag="p" @weight={{weight}}>The fox jumped over the lazy dog ({{weight}})</Hds::Text::Code>
@@ -61,6 +69,7 @@
 
   <Shw::Text::H2>Alignment</Shw::Text::H2>
   <Shw::Grid @columns={{3}} as |SG|>
+    {{! @glint-expect-error }}
     {{#each this.model.AVAILABLE_ALIGNS as |alignment|}}
       <SG.Item>
         <Shw::Flex @direction="column" as |SF|>
