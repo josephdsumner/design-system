@@ -5,13 +5,12 @@
 
 import { module, skip, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import {
-  render,
-  resetOnerror,
-  settled,
-  setupOnerror,
-} from '@ember/test-helpers';
+import { render, resetOnerror, setupOnerror } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+
+const GOOD_IMG =
+  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+const BAD_IMG = 'data:base64,';
 
 module('Integration | Component | hds/dropdown/toggle/icon', function (hooks) {
   setupRenderingTest(hooks);
@@ -41,20 +40,22 @@ module('Integration | Component | hds/dropdown/toggle/icon', function (hooks) {
   // IMAGE (AVATAR)
 
   test('if an @imageSrc is declared and exists the image should render in the component', async function (assert) {
+    const src = GOOD_IMG;
+    const imageSrc = 'imageSrc';
+    this.setProperties({ src, imageSrc });
     await render(
-      hbs`<Hds::Dropdown::Toggle::Icon @icon="user" @text="user menu" @imageSrc="/assets/images/avatar.png" id="test-toggle-icon" />`
+      hbs`<Hds::Dropdown::Toggle::Icon @icon="user" @text="user menu" @imageSrc={{this.imageSrc}} id="test-toggle-icon" />`
     );
     assert.dom('img').exists();
   });
 
   skip('if an @imageSrc is declared but does not exist, the flight icon should render in the component', async function (assert) {
-    this.set('imageSrc', '/assets/images/avatar.png');
+    const src = BAD_IMG;
+    const imageSrc = 'imageSrc';
+    this.setProperties({ src, imageSrc });
     await render(
       hbs`<Hds::Dropdown::Toggle::Icon @icon="user" @text="user menu" @imageSrc={{this.imageSrc}} id="test-toggle-icon" />`
     );
-    // we load the image dynamically to cover this usecase and also to prevent this test from intermittently failing for no obvious reason
-    this.set('imageSrc', '/assets/images/avatar-broken.png');
-    await settled();
     assert.dom('img').doesNotExist();
     assert.dom('#test-toggle-icon .flight-icon.flight-icon-user').exists();
   });
