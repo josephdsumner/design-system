@@ -1,4 +1,3 @@
-{{! @glint-nocheck: not typesafe yet }}
 {{!
   Copyright (c) HashiCorp, Inc.
   SPDX-License-Identifier: MPL-2.0
@@ -108,11 +107,12 @@
 
   <Shw::Text::H4 @tag="h3">Pre-defined colors</Shw::Text::H4>
   <Shw::Flex @direction="row" @wrap={{true}} {{style gap="2rem"}} as |SF|>
+    {{! @glint-expect-error }}
     {{#each this.model.AVAILABLE_COLORS as |color|}}
       <SF.Item @label={{color}}>
         <div class="shw-component-text-sample-color--{{color}}">
           <Hds::Text::Body @size="300" @weight="semibold" @tag="p" @color={{color}}>Lorem ipsum dolor</Hds::Text::Body>
-          <Hds::Text::Body @size="300" @weight="medium" @tag="p" @color={{color}}>Lorem ipsum dolor</Hds::Text::Body>
+          <Hds::Text::Body @size={{300}} @weight="medium" @tag="p" @color={{color}}>Lorem ipsum dolor</Hds::Text::Body>
           <Hds::Text::Body @size="300" @tag="p" @color={{color}}>Lorem ipsum dolor</Hds::Text::Body>
         </div>
       </SF.Item>
