@@ -149,11 +149,3 @@ export default class HdsBadgeIndexComponent extends Component<HdsBadgeSignature>
     return classes.join(' ');
   }
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Hds::Badge': typeof HdsBadgeIndexComponent;
-    'hds/badge': typeof HdsBadgeIndexComponent;
-    'HdsBadge': typeof HdsBadgeIndexComponent;
-  }
-}
