@@ -1,6 +1,6 @@
 {
   "name": "@hashicorp/design-system-components",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Helios Design System Components",
   "keywords": [
     "hashicorp",
@@ -70,6 +70,8 @@
     "@types/ember-resolver": "^9.0.0",
     "@types/qunit": "^2.19.7",
     "@types/rsvp": "^4.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
     "ember-template-lint": "^4.18.2",
     "ember-template-lint-plugin-prettier": "^4.2.0",
     "eslint": "^8.52.0",
@@ -83,6 +85,7 @@
     "rollup": "^4.9.0",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-ts": "^3.4.5",
     "stylelint": "^15.11.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard-scss": "^11.1.0",
@@ -248,6 +251,7 @@
       "./components/hds/text/code.js": "./dist/_app_/components/hds/text/code.js",
       "./components/hds/text/display.js": "./dist/_app_/components/hds/text/display.js",
       "./components/hds/text/index.js": "./dist/_app_/components/hds/text/index.js",
+      "./components/hds/text/types.js": "./dist/_app_/components/hds/text/types.js",
       "./components/hds/toast/index.js": "./dist/_app_/components/hds/toast/index.js",
       "./components/hds/tooltip-button/index.js": "./dist/_app_/components/hds/tooltip-button/index.js",
       "./components/hds/yield/index.js": "./dist/_app_/components/hds/yield/index.js",

@@ -1,5 +1,5 @@
 declare module '@hashicorp/ember-flight-icons/components/flight-icon' {
-  import Component from '@ember/component';
+  import Component from '@glimmer/component';
 
   export interface FlightIconSignature {
     Args: {
@@ -13,11 +13,10 @@ declare module '@hashicorp/ember-flight-icons/components/flight-icon' {
 
   export class FlightIcon extends Component<FlightIconSignature> {}
 
-
   // Temporary until FlightIcon exposes glint types
   module '@glint/environment-ember-loose/registry' {
     export default interface Registry {
-      'FlightIcon': typeof FlightIcon;
+      FlightIcon: typeof FlightIcon;
     }
   }
 
