@@ -5,6 +5,7 @@
 
 import { Addon } from '@embroider/addon-dev/rollup';
 import { babel } from '@rollup/plugin-babel';
+import { existsSync } from 'fs';
 import copy from 'rollup-plugin-copy';
 import scss from 'rollup-plugin-scss';
 import process from 'process';
@@ -73,6 +74,17 @@ const plugins = [
       { src: 'LICENSE.md', dest: 'dist' },
     ],
   }),
+
+  // Check if Sass was successfully compiled to CSS
+  {
+    name: 'check-css-file-exists',
+    buildEnd() {
+      const filePath = '../dist/styles/@hashicorp/design-system-components.css';
+      if (!existsSync(filePath)) {
+        throw new Error(`${filePath} does not exist.`);
+      }
+    },
+  },
 ];
 
 if (!process.env.development) {
