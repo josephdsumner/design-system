@@ -2,8 +2,6 @@
  * Copyright (c) HashiCorp, Inc.
  * SPDX-License-Identifier: MPL-2.0
  */
-import { assert } from '@ember/debug';
-import Component from '@glimmer/component';
 import {
   type Color,
   ColorValues,
@@ -12,6 +10,8 @@ import {
   type Type,
   TypeValues,
 } from './types.ts';
+import { assert } from '@ember/debug';
+import Component from '@glimmer/component';
 
 export interface HdsBadgeSignature {
   Args: {

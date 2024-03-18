@@ -2,6 +2,7 @@
  * Copyright (c) HashiCorp, Inc.
  * SPDX-License-Identifier: MPL-2.0
  */
+import type HdsBadgeIndexComponent from './components/hds/badge';
 import type HdsButtonIndexComponent from './components/hds/button';
 import type HdsDismissButtonIndexComponent from './components/hds/dismiss-button';
 import type HdsInteractiveIndexComponent from './components/hds/interactive';
@@ -12,7 +13,6 @@ import type HdsTextDisplayComponent from './components/hds/text/display';
 import type HdsYieldComponent from './components/hds/yield';
 import type HdsLinkToModelsHelper from './helpers/hds-link-to-models';
 import type HdsLinkToQueryHelper from './helpers/hds-link-to-query';
-import type HdsBadgeIndexComponent from "./components/hds/badge";
 
 export default interface HdsComponentsRegistry {
   HdsInteractiveComponent: typeof HdsInteractiveIndexComponent;
@@ -57,5 +57,5 @@ export default interface HdsComponentsRegistry {
   // Badge
   'Hds::Badge': typeof HdsBadgeIndexComponent;
   'hds/badge': typeof HdsBadgeIndexComponent;
-  'HdsBadge': typeof HdsBadgeIndexComponent;
+  HdsBadge: typeof HdsBadgeIndexComponent;
 }
