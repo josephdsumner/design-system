@@ -57,7 +57,7 @@ export default class HdsFormFieldIndexComponent extends Component {
   }
 
   /**
-   * Returns the label id for the form control
+   * Returns the label id for the form control's label
    */
   get labelId() {
     return `label-${this.id}`;
